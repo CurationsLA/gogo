@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import DevHomeEscape from './DevHomeEscape';
 
 interface ThemeConfig {
   id: string;
@@ -499,7 +498,6 @@ export default function ThemeSitePreview() {
 
   return (
     <div style={{ minHeight: '100vh', paddingTop: '80px' }}>
-      <DevHomeEscape />
       {renderNavigation()}
       
       {currentPage === 'home' && (

@@ -116,6 +116,7 @@ const OutboxMeter = () => {
 
 export default function Outbox() {
   return (
+    <>
     <main style={{ 
       background: "#F8FAFC", 
       minHeight: "100vh", 
@@ -295,12 +296,12 @@ export default function Outbox() {
                   boxShadow: "4px 4px 0px #000000",
                 }}
                 onMouseEnter={(e) => {
-                  e.target.style.transform = "translate(-2px, -2px)";
-                  e.target.style.boxShadow = "6px 6px 0px #000000";
+                  (e.target as HTMLElement).style.transform = "translate(-2px, -2px)";
+                  (e.target as HTMLElement).style.boxShadow = "6px 6px 0px #000000";
                 }}
                 onMouseLeave={(e) => {
-                  e.target.style.transform = "translate(0, 0)";
-                  e.target.style.boxShadow = "4px 4px 0px #000000";
+                  (e.target as HTMLElement).style.transform = "translate(0, 0)";
+                  (e.target as HTMLElement).style.boxShadow = "4px 4px 0px #000000";
                 }}
               >
                 Submit Pitch
@@ -332,8 +333,8 @@ export default function Outbox() {
               fontSize: "1.125rem",
               transition: "color 0.2s ease",
             }}
-            onMouseEnter={(e) => e.target.style.color = "#38B6FF"}
-            onMouseLeave={(e) => e.target.style.color = "#FF69B4"}
+            onMouseEnter={(e) => (e.target as HTMLElement).style.color = "#38B6FF"}
+            onMouseLeave={(e) => (e.target as HTMLElement).style.color = "#FF69B4"}
           >
             hello@curations.cc
           </a>
@@ -341,7 +342,7 @@ export default function Outbox() {
       </section>
 
       {/* Mobile Responsive Styles */}
-      <style jsx>{`
+      <style>{`
         @keyframes pulse {
           0%, 100% { opacity: 0.7; }
           50% { opacity: 1; }
@@ -371,6 +372,7 @@ export default function Outbox() {
         }
       `}</style>
     </main>
-      <Footer />
+    <Footer />
+    </>
   );
 }
